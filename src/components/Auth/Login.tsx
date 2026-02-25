@@ -6,8 +6,8 @@ import { useAuth } from '../../contexts/AuthContext';
 const Login = () => {
   const { user, login, loading } = useAuth();
   const [formData, setFormData] = useState({
-    email: 'admin@educacao.gov.br',
-    password: 'password',
+    email: '',
+    password: '',
   });
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -171,15 +171,15 @@ const Login = () => {
               ))}
             </div>
 
-            <div className="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-              <p className="text-xs text-yellow-800">
-                <strong>Senhas dos usuários:</strong> admin123, carlos123, maria123, joao123
+            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-xs text-blue-800">
+                <strong>Como usar:</strong> As senhas são armazenadas diretamente no campo password_hash da tabela users no banco de dados. Você pode inserir usuários manualmente via SQL ou interface do Supabase.
               </p>
             </div>
 
             <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-xs text-green-800">
-                <strong>Sistema com Supabase Auth:</strong> Sua sessão será mantida automaticamente durante a navegação.
+                <strong>Sistema sem Supabase Auth:</strong> Login customizado usando localStorage. Sua sessão expira em 7 dias.
               </p>
             </div>
           </div>
